@@ -23,7 +23,7 @@ if ! [[ -f serverinstall_${ID}_${VER} ]]; then
   rm -f serverinstall_${ID}* forge-*.jar run.sh start.sh
   curl -Lo serverinstall_${ID}_${VER} https://api.feed-the-beast.com/v1/modpacks/public/modpack/${ID}/${VER}/server/linux
   chmod +x serverinstall_${ID}_${VER}
-   ./serverinstall_${ID}_${VER} -dir /data -no-java
+   ./serverinstall_${ID}_${VER} -dir /data -no-java -auto -force
 fi
 
 if [[ -n "$MOTD" ]]; then
