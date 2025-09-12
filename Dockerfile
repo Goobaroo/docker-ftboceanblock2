@@ -2,12 +2,12 @@
 
 FROM openjdk:21-jdk-buster
 
-LABEL version="1.13.2"
+LABEL version="1.10.2"
 LABEL homepage.group=Minecraft
-LABEL homepage.name="FTB OceanBlock 2"
-LABEL homepage.icon="https://cdn.feed-the-beast.com/blob/fa/fae647b9fa950ab09081ca6b395ea02dd06c7532b09b22fc3eb035b3092f7f78.png"
+LABEL homepage.name="FTB NeoTech"
+LABEL homepage.icon="https://cdn.feed-the-beast.com/blob/c8/c853e9a0534b3e83a2b2dc90fd439db77b8094c5f6b06e92d8e0072212d89bb6.png"
 LABEL homepage.widget.type=minecraft
-LABEL homepage.widget.url=udp://FTB-Ocean-Block-2:25565
+LABEL homepage.widget.url=udp://FTB-NeoTech:25565
 
 
 RUN apt-get update && apt-get install -y curl && \
@@ -23,7 +23,7 @@ WORKDIR /data
 
 EXPOSE 25565/tcp
 
-ENV MOTD="FTB OceanBlock 2 v1.13.2 Server Powered by Docker"
+ENV MOTD="FTB NeoTech v1.10.2 Server Powered by Docker"
 ENV LEVEL=world
 ENV JVM_OPTS="-Xms4096m -Xmx6144m"
 

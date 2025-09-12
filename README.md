@@ -1,4 +1,4 @@
-# [FTB OceanBlock 2](https://feed-the-beast.com/modpack/128-ftb_oceanblock_2) By FTB
+# [FTB NeoTech](https://feed-the-beast.com/modpacks/123-ftb-neotech) By FTB
 
 <!-- toc -->
 
@@ -18,7 +18,7 @@
 
 This container is built to run on an [Unraid](https://unraid.net) server, outside of that your milliage will vary.
 
-The docker on first run will download the same version as tagged of `FTB OceanBlock 2` and install it.  This can take a while as the Forge installer can take a bit to complete.  You can watch the logs and it will eventually finish.
+The docker on first run will download the same version as tagged of `FTB NeoTech` and install it.  This can take a while as the Forge installer can take a bit to complete.  You can watch the logs and it will eventually finish.
 
 After the first run it will simply start the server.
 
@@ -37,7 +37,7 @@ As the end user, you are repsonsible for accepting the EULA from Mojang to run t
 These environment variables can be set at run time to override their defaults.
 
 * JVM_OPTS "-Xms4096m -Xmx6144m"
-* MOTD "FTB OceanBlock 2 Server Powered by Docker"
+* MOTD "FTB NeoTech Server Powered by Docker"
 * LEVEL world
 
 ### Adding Minecraft Operators
@@ -59,6 +59,9 @@ This container is designed for [Unraid](https://unraid.net) so the user in the c
 If the install is incomplete for some reason.  Deleting the downloaded server file in /data will restart the install/upgrade process.
 
 ## Source
-Github: https://github.com/Goobaroo/docker-ftboceanblock2
 
-Docker: https://hub.docker.com/repository/docker/goobaroo/ftboceanblock2
+Forked from: https://github.com/Goobaroo/docker-ftboceanblock2
+
+Github: https://github.com/nBestauros/docker-ftbneotech
+
+Docker: - TBD
