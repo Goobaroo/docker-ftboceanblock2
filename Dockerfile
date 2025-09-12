@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM openjdk:21-jdk-buster
+FROM openjdk:21-jdk-bookworm
 
 LABEL version="1.10.2"
 LABEL homepage.group=Minecraft
@@ -10,8 +10,9 @@ LABEL homepage.widget.type=minecraft
 LABEL homepage.widget.url=udp://FTB-NeoTech:25565
 
 
-RUN apt-get update && apt-get install -y curl && \
- adduser --uid 99 --gid 100 --home /data --disabled-password minecraft
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends curl \
+ && adduser --uid 99 --gid 100 --home /data --disabled-password minecraft
 
 COPY launch.sh /launch.sh
 RUN chmod +x /launch.sh
