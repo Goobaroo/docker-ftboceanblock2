@@ -2,7 +2,7 @@
 
 FROM eclipse-temurin:21-jdk
 
-LABEL version="1.14.0"
+LABEL version="1.13.2"
 LABEL homepage.group=Minecraft
 LABEL homepage.name="FTB OceanBlock 2"
 LABEL homepage.icon="https://cdn.feed-the-beast.com/blob/fa/fae647b9fa950ab09081ca6b395ea02dd06c7532b09b22fc3eb035b3092f7f78.png"
@@ -23,7 +23,7 @@ WORKDIR /data
 
 EXPOSE 25565/tcp
 
-ENV MOTD="FTB OceanBlock 2 v1.14.0 Server Powered by Docker"
+ENV MOTD="FTB OceanBlock 2 v1.13.2 Server Powered by Docker"
 ENV LEVEL=world
 ENV JVM_OPTS="-Xms4096m -Xmx6144m"
 
