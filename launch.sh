@@ -41,6 +41,22 @@ fi
 
 sed -i 's/server-port.*/server-port=25565/g' server.properties
 
+# CVE-2026-114938 (Java4Shell): disable the Base64 intrinsic on susceptible CPUs
+_j4s_flags="$( { grep -m1 '^flags' /proc/cpuinfo 2>/dev/null | cut -d: -f2-
+                 sysctl -n machdep.cpu.features machdep.cpu.leaf7_features 2>/dev/null; } \
+                 | tr '[:upper:]' '[:lower:]' | tr ' \t' '\n\n' )"
+_j4s_hits=0
+for _f in avx512f avx512bw avx512vbmi bmi2; do
+  printf '%s\n' "$_j4s_flags" | grep -qx "$_f" && _j4s_hits=$((_j4s_hits + 1))
+done
+if [ "$_j4s_hits" -eq 4 ]; then
+  case " ${JVM_OPTS:-} " in
+    *" -XX:-UseBASE64Intrinsics "*) ;;
+    *) JVM_OPTS="${JVM_OPTS:+$JVM_OPTS }-XX:-UseBASE64Intrinsics" ;;
+  esac
+fi
+unset _j4s_flags _j4s_hits _f
+
 [[ -f run.sh ]] && chmod 755 run.sh
 [[ -f start.sh ]] && chmod 755 start.sh
 if [[ -f run.sh || -f start.sh ]]; then
